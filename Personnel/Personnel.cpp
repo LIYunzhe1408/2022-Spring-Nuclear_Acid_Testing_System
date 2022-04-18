@@ -12,7 +12,7 @@ void Personnel::AddCloseContactPersonnel(const Personnel& personnel)
 }
 
 // 获取临近人员
-std::vector<Personnel> Personnel::GetCloseContactInQueue() const
+vector<Personnel> Personnel::GetCloseContactInQueue() const
 {
     return close_contact_in_queue_;
 }

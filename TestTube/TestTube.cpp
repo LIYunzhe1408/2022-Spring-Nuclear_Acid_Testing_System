@@ -25,7 +25,7 @@ std::string TestTube::ProduceTubeNum(int test_tube_number)
 // ==============================================
 // Public
 // 设置检测结果
-std::vector<Personnel> TestTube::GetPersonnelInThisTube()
+vector<Personnel> TestTube::GetPersonnelInThisTube()
 {
     return tested_personnels;
 }
@@ -36,7 +36,7 @@ void TestTube::SetTestResult(TEST_RESULT test_result)
 }
 
 // 开封一个检测管
-void TestTube::OpenOneTube(int test_mode, const std::vector<Personnel> &personnels)
+void TestTube::OpenOneTube(int test_mode, vector<Personnel> personnels)
 {
     test_result_ = TEST_RESULT::TESTING;
     test_mode_ = test_mode;					// 记录这一管的测试模式
@@ -52,4 +52,13 @@ void TestTube::OpenOneTube(int test_mode, const std::vector<Personnel> &personne
         total_mixed_test_tube_amount_++;
         tube_number_ = ProduceTubeNum(total_mixed_test_tube_amount_);
     }
+}
+bool TestTube::IsTested()
+{
+    return is_tested_;
+}
+
+void TestTube::SetTested()
+{
+    is_tested_ = true;
 }
